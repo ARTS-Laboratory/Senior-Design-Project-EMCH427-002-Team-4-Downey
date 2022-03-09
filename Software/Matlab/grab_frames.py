@@ -6,10 +6,11 @@ Created on Wed Sep 22 18:22:52 2021
 """
 
 
-
+# import IPython as IP
+# IP.get_ipython().magic('reset -sf')
+# from time import perf_counter
 import cv2
 import numpy as np
-import time
 
 
 def process_frame(image):
@@ -61,14 +62,10 @@ def process_frame(image):
     
     return max_area, radius, cX, cY, mean 
 
-start = time.time()
+
 image_path = "save/video_ai/whole916.png"
-frame = cv2.imread(image_path)
-[max_area, radius, cX, cY, brightness] = process_frame(frame)
-print("end: {}".format(time.time()-start))
-# import IPython as IP
-# IP.get_ipython().magic('reset -sf')
-# from time import perf_counter
+image = cv2.imread(image_path)
+[max_area, radius, cX, cY, brightness] = process_frame(image)
 
 # Creates the a directory to store the frames
 # def create_dir(path):
