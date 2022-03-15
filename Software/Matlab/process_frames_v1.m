@@ -5,14 +5,14 @@ clc;
 image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/0.png');
 
 tic;
-[max_area, radius, centroid, image] = ProcessFrames(image);
+[max_area, radius, centroid, brightness, image] = ProcessFrames(image);
 toc
 imshow(image)
-function [max_area, radius, centroid, image] = ProcessFrames(image)
+function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
 
-    copy = rgb2gray(image);
+    gray = rgb2gray(image);
 
-    copy = imgaussfilt(copy,0.1); %standard deviation of 2
+    copy = imgaussfilt(gray,0.1); %standard deviation of 2
 
     copy = imbinarize(copy, 'global'); %thresh
     
@@ -28,29 +28,26 @@ function [max_area, radius, centroid, image] = ProcessFrames(image)
     max_area = stats.Area;
     centroid = [ceil(stats.Centroid(1)) ceil(stats.Centroid(2))];
     PixelList = stats.PixelList;
-    
-
-    % brightness = zeros(length(PixelList.PixelList(:,1)),1);
-    % 
-    % for idx = 1:1:length(PixelList.PixelList(:,1))
-    %     pixel = PixelList.PixelList(idx,:);
-    % %     display(pixel(2))
-    %     lumen = gray(pixel(1), pixel(2));
-    %     brightness(idx) = lumen;
-    % end
-    % brightness = round(mean(brightness));
-    % gray(centroid(1), centroid(2))
-
 
 
     SE = strel('line',1,1);
     copy = imerode(copy,SE);
-
+    
+    brightness = zeros(length(PixelList(:,1)),1);
+    % 
+    for idx = 1:1:length(PixelList(:,1))
+        pixel = PixelList(idx,:);
+        lumen = gray(pixel(1), pixel(2));
+        brightness(idx) = lumen;
+    end
+    brightness = round(mean(brightness));
+    
     % dilate = imdilate(erode,SE);
     % imshow(erode)
     % imshow(copy)
     % montage({image,gray,gaus,thresh,erode})
     [B,~]= bwboundaries(copy);
+    
 
     horz = length(image(1,:))/3;
     vert = length(image(:,1));
