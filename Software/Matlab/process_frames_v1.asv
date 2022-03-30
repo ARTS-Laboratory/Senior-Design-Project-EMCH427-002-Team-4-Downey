@@ -7,7 +7,7 @@ image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Pro
 tic;
 [max_area, radius, centroid, brightness, image] = ProcessFrames(image);
 toc
-imshow(image)
+% imshow(image)
 function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
 
     gray = rgb2gray(image);
@@ -51,36 +51,40 @@ function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
     [B,~]= bwboundaries(copy);
     
 
-    horz = length(image(1,:))/3;
-    vert = length(image(:,1));
-    text_str = cell(4,1);
-    text_str{1} = ['(X,Y): ' num2str(centroid(1),'%0.2f') '%'];
-    text_str{2} = ['Area: ' num2str(max_area,'%0.2f') '%'];
-    text_str{3} = ['Radius: ' num2str(radius,'%0.2f') '%'];
-    text_str{4} = ['Brightness: ' num2str(brightness,'%0.2f') '%'];
-    
-    positions = [0 vert-vert/8; 32 vert-vert/8; 0 vert-vert/8-30; horz-horz/8 vert-vert/8-30; horz-horz/8 vert-vert/8];
-    values = [centroid max_area radius brightness];
-    
-    image = insertText(image, positions, text_str,'FontSize',12,'BoxColor',...
-        [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
+%     horz = length(image(1,:))/3;
+%     vert = length(image(:,1));
+%     text_str = cell(5,1);
+%     text_str{1} = ['X: ' num2str(centroid(1),'%0.2f')];
+%     text_str{2} = ['Y: ' num2str(centroid(2),'%0.2f')];
+%     text_str{3} = ['Area: ' num2str(max_area,'%0.2f')];
+%     text_str{4} = ['Radius: ' num2str(radius,'%0.2f')];
+%     text_str{5} = ['Brightness: ' num2str(brightness,'%0.2f')];
+%     
+%     positions = [0 vert-vert/8; horz/5 vert-vert/8; 0 vert-vert/8-30; horz-horz/3 vert-vert/8-30; horz-horz/3 vert-vert/8];
+%     values = [centroid max_area radius brightness];
+%     
+%     image = insertText(image, positions, text_str,'FontSize',9,'BoxColor',...
+%         [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
 
 
-    
+    figure;
+    hold on
+    imcontour(copy,3)
 
 
     % imshow(label2rgb(L, @jet, [.5 .5 .5]))
-
-    % for k = 1:length(B)
-    %    boundary = B{k};
-    %    plot(boundary(:,2), boundary(:,1), 'r', 'LineWidth', 2);
-    %    
-    % end
-
-    for k = 1:length(B{1,1}(:,2))
-        image(B{1,1}(k,1) ,B{1,1}(k,2),1) = 255;
-    end
+%     imshow(image);
+%     hold on
+%     for k = 1:length(B)
+%        boundary = B{k};
+%        plot(boundary(:,2), boundary(:,1), 'r', 'LineWidth', 1);
+%        
+%     end
+%     hold off
+%     for k = 1:length(B{1,1}(:,2))
+%         image(B{1,1}(k,1) ,B{1,1}(k,2),1) = 255;
+%     end
 end
-% imshow(image)
+% 
 
 

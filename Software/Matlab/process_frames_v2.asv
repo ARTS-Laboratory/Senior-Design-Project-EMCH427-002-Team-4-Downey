@@ -2,8 +2,7 @@
 % clear all;
 clc;
 % '/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/Python/save/video_ai/whole916.png'
-image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/test2.png');
-
+image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/test.png');
 
 tic;
 % [image] = ProcessFrames(image);
@@ -13,9 +12,9 @@ tic;
     data = zeros(1,5);
 
     gray = rgb2gray(image);
-    
+
     copy = imgaussfilt(gray,0.1); %standard deviation of 2
-    
+
     copy = imbinarize(copy, 'adaptive','ForegroundPolarity','bright', 'Sensitivity',0.01); %thresh
     
     PixelList = [];
@@ -42,7 +41,7 @@ tic;
     % dilate = imdilate(erode,SE);
     % imshow(erode)
     % imshow(copy)
-%         montage({image,gray,gaus,thresh,erode})
+    %     montage({image,gray,gaus,thresh,erode})
 
 %     radius = stats(idx).EquivDiameter(end)/2;
 %     centroid = [ceil(stats(idx).Centroid(1)) ceil(stats(idx).Centroid(2))];
@@ -76,7 +75,6 @@ tic;
     
     image = insertText(image, positions, text_str,'FontSize',9,'BoxColor',...
         [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
-
 
 %     [B,~]= bwboundaries(copy);
 %     for k = 1:length(B{1,1}(:,2))
@@ -113,6 +111,9 @@ tic;
 %% Contour matrix
 % PixelList = stats(i).PixelList;
 PixelList = PixelList';
+% plot(PixelList(:,1), PixelList(:,2), 'o')
+% % 
+PixelList = PixelList';
 for k = 1:1:length(PixelList(:,1))
     pixel = PixelList(k,:);
     copy(pixel(2), pixel(1));
@@ -144,3 +145,6 @@ imshow(image)
 % 
 % figure;
 % plot(C(1,:), C(2,:), 'o')
+%%
+C = [1 2; 3 4];
+D = padarray(C,[1 1],0,'both')

@@ -2,12 +2,12 @@
 % clear all;
 clc;
 % '/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/Python/save/video_ai/whole916.png'
-image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/0.png');
+image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/3.png');
 
 tic;
 [max_area, radius, centroid, brightness, image] = ProcessFrames(image);
 toc
-imshow(image)
+% imshow(image)
 function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
 
     gray = rgb2gray(image);
@@ -19,12 +19,6 @@ function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
 %     SE = strel('line',1,1);
 %     copy = imerode(copy,SE);
     
-%     max_area = bwarea(copy);
-%     measurements = regionprops(copy, 'Centroid');
-%     Diameter = regionprops(copy, 'EquivDiameter');
-%     radius = Diameter.EquivDiameter(end);
-%     PixelList = regionprops(copy, 'PixelList');
-%     centroid = [ceil(measurements.Centroid(1)) ceil(measurements.Centroid(2))];
 
     stats = regionprops(copy, 'Area','Centroid', 'EquivDiameter', 'PixelList');
     radius = stats.EquivDiameter(end)/2;
@@ -51,37 +45,47 @@ function [max_area, radius, centroid, brightness, image] = ProcessFrames(image)
     [B,~]= bwboundaries(copy);
     
 
-    horz = length(image(1,:))/3;
-    vert = length(image(:,1));
-    text_str = cell(5,1);
-    text_str{1} = ['X: ' num2str(centroid(1),'%0.2f')];
-    text_str{2} = ['Y: ' num2str(centroid(2),'%0.2f')];
-    text_str{3} = ['Area: ' num2str(max_area,'%0.2f')];
-    text_str{4} = ['Radius: ' num2str(radius,'%0.2f')];
-    text_str{5} = ['Brightness: ' num2str(brightness,'%0.2f')];
+%     horz = length(image(1,:))/3;
+%     vert = length(image(:,1));
+%     text_str = cell(5,1);
+%     text_str{1} = ['X: ' num2str(centroid(1),'%0.2f')];
+%     text_str{2} = ['Y: ' num2str(centroid(2),'%0.2f')];
+%     text_str{3} = ['Area: ' num2str(max_area,'%0.2f')];
+%     text_str{4} = ['Radius: ' num2str(radius,'%0.2f')];
+%     text_str{5} = ['Brightness: ' num2str(brightness,'%0.2f')];
+%     
+%     positions = [0 vert-vert/8; horz/5 vert-vert/8; 0 vert-vert/8-30; horz-horz/3 vert-vert/8-30; horz-horz/3 vert-vert/8];
+%     values = [centroid max_area radius brightness];
+%     
+%     image = insertText(image, positions, text_str,'FontSize',9,'BoxColor',...
+%         [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
+    figure(2);
+    imshow(copy)
+
+    figure;
+    imshow(copy)
+    hold on
+    imcontour(copy,3,"-r")
+    hold off
     
-    positions = [0 vert-vert/8; horz/5 vert-vert/8; 0 vert-vert/8-30; horz-horz/3 vert-vert/8-30; horz-horz/3 vert-vert/8];
-    values = [centroid max_area radius brightness];
-    
-    image = insertText(image, positions, text_str,'FontSize',9,'BoxColor',...
-        [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
-
-
-    
-
-
     % imshow(label2rgb(L, @jet, [.5 .5 .5]))
-
-    % for k = 1:length(B)
-    %    boundary = B{k};
-    %    plot(boundary(:,2), boundary(:,1), 'r', 'LineWidth', 2);
-    %    
-    % end
+%     imshow(image);
+%     hold on
+%     for k = 1:length(B)
+%        boundary = B{k};
+%        plot(boundary(:,2), boundary(:,1), 'r', 'LineWidth', 1);
+%        
+%     end
 
     for k = 1:length(B{1,1}(:,2))
-        image(B{1,1}(k,1) ,B{1,1}(k,2),1) = 255;
+            image(B{1,1}(k,1) ,B{1,1}(k,2),:) = [255 0 0];
+
+            image(B{1,1}(k,1) ,B{1,1}(k,2)+1,:) = [255 0 0];
+            image(B{1,1}(k,1) ,B{1,1}(k,2)-1,:) = [255 0 0];
+            image(B{1,1}(k,1)+1 ,B{1,1}(k,2),:) = [255 0 0];
+            image(B{1,1}(k,1)-1 ,B{1,1}(k,2),:) = [255 0 0];
     end
 end
-% imshow(image)
+% 
 
 
