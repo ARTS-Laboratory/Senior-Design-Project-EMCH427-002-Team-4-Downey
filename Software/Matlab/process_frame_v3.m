@@ -2,7 +2,9 @@
 % clear all;
 clc;
 % '/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/Python/save/video_ai/whole916.png'
-image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/test.png');
+image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/FILR/FILR_edit2.jpg');
+% image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/2.png');
+
 
 tic;
 % [image] = ProcessFrames(image);
@@ -12,17 +14,18 @@ tic;
     data = zeros(1,5);
 
     gray = rgb2gray(image);
-
-    copy = imgaussfilt(gray,0.1); %standard deviation of 2
-
-    copy = imbinarize(copy, 'adaptive','ForegroundPolarity','bright', 'Sensitivity',0.01); %thresh
     
-    PixelList = [];
+%     gaus = imgaussfilt(gray,0.1); %standard deviation of 2
+    
+%     copy = imbinarize(gaus, 'adaptive','ForegroundPolarity','bright', 'Sensitivity',0.9); %thresh
+    copy = 215 < gray; %thresh
+    
+    PixelList = zeros(2, 0);
     stats = regionprops(copy, 'Area','Centroid', 'EquivDiameter', 'PixelList');
     idx = 0;
     for i = 1:length(stats)
         
-        if stats(i).Area >= 10
+        if stats(i).Area >= 40
             PixelList = [PixelList stats(i).PixelList'];
             
             if stats(i).Area > data(3)
@@ -41,7 +44,7 @@ tic;
     % dilate = imdilate(erode,SE);
     % imshow(erode)
     % imshow(copy)
-    %     montage({image,gray,gaus,thresh,erode})
+
 
 %     radius = stats(idx).EquivDiameter(end)/2;
 %     centroid = [ceil(stats(idx).Centroid(1)) ceil(stats(idx).Centroid(2))];
@@ -76,6 +79,7 @@ tic;
     image = insertText(image, positions, text_str,'FontSize',9,'BoxColor',...
         [255 0 0],'BoxOpacity',0.4,'TextColor',[255 255 255]);
 
+    
 %     [B,~]= bwboundaries(copy);
 %     for k = 1:length(B{1,1}(:,2))
 %         image(B{1,1}(k,1) ,B{1,1}(k,2),:) = [255 0 0];
@@ -110,13 +114,11 @@ tic;
 
 %% Contour matrix
 % PixelList = stats(i).PixelList;
-PixelList = PixelList';
-% plot(PixelList(:,1), PixelList(:,2), 'o')
-% % 
-PixelList = PixelList';
+PixelList = PixelList'; %REMOVE THIS FOR SPEED 
 for k = 1:1:length(PixelList(:,1))
     pixel = PixelList(k,:);
-    copy(pixel(2), pixel(1));
+%     copy(pixel(2), pixel(1));
+%     if pixel()
 
     if copy(pixel(2)+1,pixel(1)) == 0
         image(pixel(2)+1,pixel(1),:) = [255 0 0];
@@ -140,11 +142,9 @@ for k = 1:1:length(PixelList(:,1))
 
 end
 toc
-figure;
-imshow(image)
+montage({gray,copy,image})
+% figure;
+% imshow(image)
 % 
 % figure;
 % plot(C(1,:), C(2,:), 'o')
-%%
-C = [1 2; 3 4];
-D = padarray(C,[1 1],0,'both')
