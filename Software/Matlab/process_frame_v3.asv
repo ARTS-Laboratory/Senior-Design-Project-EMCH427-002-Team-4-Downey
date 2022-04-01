@@ -152,7 +152,7 @@ montage({gray,copy,image})
 % image = imread('/Users/bpriddy/Documents/GitHub/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/FILR/FILR_edit14.jpg');
 % image = imread('/Users/bpriddy/Documents/GitHub/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/test3.png');
 
-image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/0.png');
+image = imread('/Users/Owner/OneDrive/Documents/Python Scripts/Senior-Design-Project-EMCH427-002-Team-4-Downey/Software/images/test4.png');
 
 tic;
 [data, image] = ProcessFrames(image);
@@ -168,9 +168,7 @@ function [data, image] = ProcessFrames(image)
 
 %     copy = imgaussfilt(gray,0.1); %standard deviation of 2
 
-%     copy = 215 < gray; %thresh
-    copy = imbinarize(gray,0.85);
-    
+    copy = 215 < gray; %thresh
     
     copy(2:6,2:9) = 1;
     copy(:,1) = 0;
