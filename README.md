@@ -1,5 +1,5 @@
 # Senior-Design-Project-EMCH427-002-Team-4-Downey
-Camera-in-the-loop System for Additive Manufacturing 
+Camera-in-the-loop System for Additive Manufacturing (CLAM)
 
 Background:
 The Adaptive Real-Time Systems Laboratory (ARTS-Lab) at the University of South Carolina is working to develop a system for fault detection in additive manufactured components, particularly those that use metal-based processes.  Optical systems that can detect and quantify the size and location of the melt-pool in real-time are instrumental to this work.
