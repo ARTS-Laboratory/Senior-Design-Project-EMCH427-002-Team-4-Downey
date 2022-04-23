@@ -17,7 +17,10 @@ Project Deliverables:
 
 ##[Hardware setup for CLAM system](CLAM_hardware)
 1. A build plate designed to accomadate monitoring apparatus
-2. 
+2. Camera mount to house optical camera
+3. FLIR BFS-U3-16S2M-CS optical camera
+4. Real-Time target unit
+5. Display
 
 ![concept individual components](https://user-images.githubusercontent.com/87868879/164946385-f739e6aa-e9ef-41d7-9971-64a388419aa9.png)
 ![2022-04-19](https://user-images.githubusercontent.com/87868879/164946987-214ebd71-109d-4013-87b8-516d36b57c96.png)
