@@ -15,5 +15,7 @@ Project Deliverables:
 •	A detailed public Github page will be made public and students can show it in their job search.
 •	Detailed documentation with a “quick start guide”, source code, and CAD files. 
 
+Diagram, engineering drawing
 
+Description automatically generated
 
