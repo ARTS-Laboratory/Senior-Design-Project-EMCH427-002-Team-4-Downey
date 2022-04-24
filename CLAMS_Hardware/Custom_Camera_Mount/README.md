@@ -7,4 +7,4 @@
 # [G-code](Generated_G-code)
 ## G-code generated for 3D printing each camera mount part (Software used was Ultimaker Cura 1.13.1)
 
-# [Return to Readme](https://github.com/ARTS-Laboratory/Senior-Design-Project-EMCH427-002-Team-4-Downey/tree/main/CLAMS_Hardware#readme)
+# [Return to Hardware Readme](https://github.com/ARTS-Laboratory/Senior-Design-Project-EMCH427-002-Team-4-Downey/tree/main/CLAMS_Hardware#readme)
