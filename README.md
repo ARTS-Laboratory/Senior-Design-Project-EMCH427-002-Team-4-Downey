@@ -15,7 +15,7 @@ Project Deliverables:
 •	A detailed public Github page will be made public and students can show it in their job search.
 •	Detailed documentation with a “quick start guide”, source code, and CAD files. 
 
-##[Hardware setup for CLAMS](CLAMS_Hardware)
+## [Hardware setup for CLAMS](CLAMS_Hardware)
 1. A build plate designed to accomadate monitoring apparatus
 2. Camera mount to house optical camera
 3. FLIR BFS-U3-16S2M-CS optical camera
@@ -25,13 +25,15 @@ Project Deliverables:
 ![concept individual components](https://user-images.githubusercontent.com/87868879/164946385-f739e6aa-e9ef-41d7-9971-64a388419aa9.png)
 ![2022-04-19](https://user-images.githubusercontent.com/87868879/164946987-214ebd71-109d-4013-87b8-516d36b57c96.png)
 
-##[Software](CLAMS_Software)
-1. Updated code developed using Python programming language.
+## [Software](CLAMS_Software)
+Software designed during the development of this project.
 
-##[Images and Figures](CLAMS_Images_&_Figures)
+## [Images and Figures](CLAMS_Images_&_Figures)
+Images and figures collected from this project.
 
-##[Relevant Literature](CLAMS_Relevant_Literature)
+## [Relevant Literature](CLAMS_Relevant_Literature)
+Documents including reports, research papers, user manuals, ect.
 
 ##[Source Code](CLAMS_Source_Code)
-
+Original code used initially at inception of this project.
 
