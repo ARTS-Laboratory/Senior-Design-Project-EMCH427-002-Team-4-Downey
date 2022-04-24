@@ -2,6 +2,6 @@
 
 ## [C++](C++)
 
-## [MatLAB](MatLAB)
+## [MATLAB](MATLAB)
 
 ## [Python](Python)
