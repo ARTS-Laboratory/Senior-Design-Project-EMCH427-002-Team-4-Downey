@@ -19,7 +19,7 @@
 ### User's Manual
 ![2022-04-23 (6)](https://user-images.githubusercontent.com/87868879/164952936-7069bdb7-2fc8-4c12-8711-b52b803b6685.png)
 
-
+## [Return to Main Readme](https://github.com/ARTS-Laboratory/Senior-Design-Project-EMCH427-002-Team-4-Downey#readme)
 
 
 
