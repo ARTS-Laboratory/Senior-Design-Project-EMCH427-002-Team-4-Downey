@@ -1,1 +1,1 @@
-locale for kernel and application codes
+# Locale for Kernel and Application code
