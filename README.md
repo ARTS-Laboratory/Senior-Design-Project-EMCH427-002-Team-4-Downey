@@ -23,7 +23,7 @@ Project Deliverables:
 5. Display
 
 ![concept individual components](https://user-images.githubusercontent.com/87868879/164946385-f739e6aa-e9ef-41d7-9971-64a388419aa9.png)
-![2022-04-19](https://user-images.githubusercontent.com/87868879/164946987-214ebd71-109d-4013-87b8-516d36b57c96.png)
+![2022-04-23](https://user-images.githubusercontent.com/87868879/164950793-bc84d57c-932b-4bb6-9e4c-60c2c5c90d56.png)
 
 ## [Software](CLAMS_Software)
 Software designed during the development of this project.
