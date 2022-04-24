@@ -1,14 +1,14 @@
 # CLAMS Hardware Setup
 
-## [Custom Camera Mount](Custom Camera Mount)
+## [Custom Camera Mount](Custom_Camera_Mount)
 
-## [FLIR Optical Camera](FLIR BFS-U3-16S2M-CS)
+## [FLIR Optical Camera](FLIR_BFS_U3_16S2M_CS)
 
-## [SLM Printer](Metal 3D printer)
+## [SLM Printer](Metal_3D_printer)
 
 ## [Monitor](Monitor)
 
-## [Real-Time Target Machine](Real-Time Target Units)
+## [Real-Time Target Machine](Real_Time_Target_Units)
 
 
 
