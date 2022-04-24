@@ -8,6 +8,7 @@
 ![2022-04-23 (4)](https://user-images.githubusercontent.com/87868879/164952735-a75c8641-1ca1-47f4-99d2-84291fad130d.png)
 
 ## [SLM Printer](Metal_3D_printer)
+![image](https://user-images.githubusercontent.com/87868879/164953104-c6daec6b-0b35-4d0f-93ad-998bc9c90d06.png)
 
 ## [Monitor](Monitor)
 ![2022-04-23 (7)](https://user-images.githubusercontent.com/87868879/164953007-56ce0c72-9acb-4545-890b-f5f99280eb1b.png)
