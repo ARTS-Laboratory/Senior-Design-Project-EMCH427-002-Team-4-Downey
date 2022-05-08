@@ -15,6 +15,9 @@
 #### •	A detailed public Github page will be made public and students can show it in their job search.
 #### •	Detailed documentation with a “quick start guide”, source code, and CAD files. 
 
+### Project Final Report:
+#### •	The fianl report for the CLAMS.
+
 ## [Hardware setup for CLAMS](CLAMS_Hardware)
 ### 1. A build plate designed to accomadate monitoring apparatus
 ### 2. Camera mount to house optical camera
